@@ -6,7 +6,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light dark" />
-<base href="/5800north/">
+<base href="/">
+<script>(function(){try{var b=document.querySelector("base");if(!b)return;var host=location.hostname||"";if(host.endsWith("github.io")){var seg=(location.pathname||"/").split("/").filter(Boolean)[0];if(seg){b.setAttribute("href","/"+seg+"/");}}}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="./">
-      <span class="brand-mark" aria-hidden="true">✶</span>
+      <span class="brand-mark" aria-hidden="true"><img src="assets/img/compass-rose.jpg" alt="" /></span>
       <span class="brand-text">
         <span class="brand-name">5800 North</span>
         <span class="brand-sub">Wines</span>
@@ -34,7 +35,7 @@
     </button>
 
     <nav id="site-nav" class="site-nav" aria-label="Primary">
-      <a href="vintages/">Vintages</a>
+      <a href="the-years.html">The Years</a>
       <a href="gallery/">Gallery</a>
       <a href="about/">About</a>
       <a class="nav-cta" href="contact/">Contact</a>
@@ -43,20 +44,37 @@
 </header>
 
 <main id="content">
-<section class="hero"><div class="container">
-<div class="kicker">Gallery</div><h1 class="h1">A few frames from the work.</h1>
-<p class="lede">Replace these placeholders with your own best 10–12 photos.</p>
-</div></section>
-<section class="section"><div class="container">
-<div class="gallery">
-<figure class="tile"><img src="assets/img/placeholder-1.jpg" alt="Placeholder 1"></figure>
-<figure class="tile"><img src="assets/img/placeholder-2.jpg" alt="Placeholder 2"></figure>
-<figure class="tile"><img src="assets/img/placeholder-3.jpg" alt="Placeholder 3"></figure>
-<figure class="tile"><img src="assets/img/placeholder-4.jpg" alt="Placeholder 4"></figure>
-<figure class="tile"><img src="assets/img/placeholder-5.jpg" alt="Placeholder 5"></figure>
-<figure class="tile"><img src="assets/img/placeholder-6.jpg" alt="Placeholder 6"></figure>
-</div>
-</div></section>
+<section class="page-hero">
+  <div class="container">
+    <div class="kicker">Photos</div>
+    <h1 class="h1">Gallery</h1>
+    <p class="lede">A few frames from harvest and the cellar. I’ll keep adding as the years pile up.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      <figure class="figure"><img src="assets/img/harvest-2021-alicia-picking.jpg" alt="Harvest 2021"><figcaption>2021 · First harvest</figcaption></figure>
+      <figure class="figure"><img src="assets/img/harvest-party-2022-barrel-stomp.jpg" alt="Harvest party 2022"><figcaption>2022 · Harvest Party</figcaption></figure>
+      <figure class="figure"><img src="assets/img/sauv-blanc-2024-truckbed.jpg" alt="Sauvignon Blanc harvest 2024"><figcaption>2024 · Sauvignon Blanc</figcaption></figure>
+
+      <figure class="figure"><img src="assets/img/zin-punchdown.jpg" alt="Punchdown"><figcaption>Cellar · Punchdowns</figcaption></figure>
+      <figure class="figure"><img src="assets/img/basket-press-drain.jpg" alt="Pressing"><figcaption>Cellar · Press day</figcaption></figure>
+      <figure class="figure"><img src="assets/img/racking-to-barrel.jpg" alt="Racking"><figcaption>Cellar · Racking</figcaption></figure>
+
+      <figure class="figure"><img src="assets/img/bottle-gold-medal.jpg" alt="Gold medal bottle"><figcaption>2024 · Gold</figcaption></figure>
+      <figure class="figure"><img src="assets/img/cellar-2025-barrels-demijohn.jpg" alt="2025 aging"><figcaption>2025 · Aging</figcaption></figure>
+      <figure class="figure"><img src="assets/img/disgorging-sparkling-zin.jpg" alt="Disgorging sparkling"><figcaption>Sparkling · Disgorging</figcaption></figure>
+    </div>
+
+    <div class="note-card" style="margin-top:22px">
+      <h2 class="note-title">Video</h2>
+      <p>Disgorging the sparkling Ranch Zin.</p>
+      <p><a class="card-link" href="assets/img/disgorging-sparkling-zin.mp4">Watch the clip →</a></p>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer class="site-footer">

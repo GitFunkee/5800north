@@ -6,7 +6,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light dark" />
-<base href="/5800north/">
+<base href="/">
+<script>(function(){try{var b=document.querySelector("base");if(!b)return;var host=location.hostname||"";if(host.endsWith("github.io")){var seg=(location.pathname||"/").split("/").filter(Boolean)[0];if(seg){b.setAttribute("href","/"+seg+"/");}}}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="./">
-      <span class="brand-mark" aria-hidden="true">✶</span>
+      <span class="brand-mark" aria-hidden="true"><img src="assets/img/compass-rose.jpg" alt="" /></span>
       <span class="brand-text">
         <span class="brand-name">5800 North</span>
         <span class="brand-sub">Wines</span>
@@ -34,7 +35,7 @@
     </button>
 
     <nav id="site-nav" class="site-nav" aria-label="Primary">
-      <a href="vintages/">Vintages</a>
+      <a href="the-years.html">The Years</a>
       <a href="gallery/">Gallery</a>
       <a href="about/">About</a>
       <a class="nav-cta" href="contact/">Contact</a>
@@ -43,24 +44,32 @@
 </header>
 
 <main id="content">
-<section class="hero"><div class="container">
-<div class="kicker">About</div><h1 class="h1">A private label,<br>made to be shared.</h1>
-<p class="lede">Small lots, careful technique, and a preference for restraint—in the cellar and on the label.</p>
-</div></section>
-<section class="section"><div class="container split">
-<div class="panel prose">
-<h2>The name</h2><p>“5800 North” is our address on Highway 116 in Forestville. “North” is also a quiet reference to Polaris—visible from the vineyard at night.</p>
-<h2>The approach</h2><p>If it doesn’t help the wine, we try not to do it. Clean handling, deliberate choices, and clarity over fireworks.</p>
-</div>
-<div class="panel">
-<h2 class="section-title" style="margin-top:0">At a glance</h2>
-<table class="table"><tbody>
-<tr><th style="width:34%">Location</th><td>Forestville, California</td></tr>
-<tr><th>Focus</th><td>Small-lot still &amp; sparkling wines</td></tr>
-<tr><th>Availability</th><td>Private / limited</td></tr>
-</tbody></table>
-</div>
-</div></section>
+<section class="page-hero">
+  <div class="container">
+    <div class="kicker">About</div>
+    <h1 class="h1">5800 North</h1>
+    <p class="lede">5800 North began with Ranch Zinfandel and curiosity. What started as an experiment in 2021 has grown into small‑lot still and sparkling wines produced on‑site in Forestville.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <h2 class="section-title">What this is</h2>
+      <p class="section-sub">A private project. A yearly record. A reason to keep learning.</p>
+      <p>Production remains intentionally limited. The goal is improvement year over year — not scale.</p>
+      <p>If you’re looking for tasting appointments or sales, this isn’t that. If you’re into harvest notes, cellar photos, and the occasional hard‑earned win, you’re in the right place.</p>
+      <div class="actions">
+        <a class="btn primary" href="the-years.html">Read the years</a>
+        <a class="btn" href="contact/">Contact</a>
+      </div>
+    </div>
+    <div class="media-stack">
+      <img src="assets/img/compass-rose.jpg" alt="Compass rose logo">
+      <img src="assets/img/harvest-fair-gold-badge.jpg" alt="Sonoma County Harvest Fair Gold Medal badge">
+    </div>
+  </div>
+</section>
 </main>
 
 <footer class="site-footer">
