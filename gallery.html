@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — 5800 North Wines</title>
+  <meta name="description" content="Process photography from 5800 North — harvest, fermentation, pressing, cellaring, and bottling." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .gallery-section {
+      padding-top: calc(64px + 3rem);
+      padding-bottom: 3rem;
+    }
+    .gallery-header {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3.5rem) 2.5rem;
+    }
+    .gallery-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      color: var(--ink);
+      letter-spacing: 0.04em;
+    }
+    .gallery-header p {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--stone);
+      margin-top: 0.5rem;
+    }
+    hr.gallery-rule {
+      max-width: var(--max-w);
+      margin: 0 auto 2rem;
+      padding: 0 clamp(1.5rem, 4vw, 3.5rem);
+      border: none;
+      border-top: 1px solid var(--parchment);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="img/logo.png" alt="5800 North compass rose" />
+    <span class="nav-logo-text">5800 North</span>
+  </a>
+
+  <button class="nav-toggle" aria-label="Menu" onclick="this.classList.toggle('open'); document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li class="nav-dropdown">
+      <a href="vintages.html">Vintages</a>
+      <ul class="dropdown-menu">
+        <li><a href="vintages.html#v2021">2021</a></li>
+        <li><a href="vintages.html#v2022">2022</a></li>
+        <li><a href="vintages.html#v2023">2023</a></li>
+        <li><a href="vintages.html#v2024">2024</a></li>
+        <li><a href="vintages.html#v2025">2025</a></li>
+      </ul>
+    </li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+  </ul>
+</nav>
+
+
+<!-- ============================================================
+     GALLERY
+     ============================================================ -->
+<section class="gallery-section">
+  <div class="gallery-header">
+    <h1>The Work</h1>
+    <p>From harvest to bottle — process photography, 2021 – 2025.</p>
+  </div>
+  <hr class="gallery-rule" />
+
+  <div class="gallery-grid">
+
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="img/harvest-grapes.jpg" alt="Sauvignon Blanc clusters in harvest trays, Russian River Valley" loading="lazy" />
+      <div class="gallery-caption">Harvest &nbsp;·&nbsp; Sauvignon Blanc</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="img/harvest-party.jpg" alt="Sorting grapes at harvest party" loading="lazy" />
+      <div class="gallery-caption">Harvest Party &nbsp;·&nbsp; 2022</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="img/misc3.jpg" alt="Punching down the cap during red wine fermentation" loading="lazy" />
+      <div class="gallery-caption">Punchdown &nbsp;·&nbsp; Zinfandel</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="img/press.jpg" alt="Red pneumatic wine press with juice flowing" loading="lazy" />
+      <div class="gallery-caption">Press Day</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="img/testing.jpg" alt="pH and TA titration meter reading 3.87" loading="lazy" />
+      <div class="gallery-caption">Titration &nbsp;·&nbsp; pH 3.87</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="img/fermentation.jpg" alt="Winemaking room full of carboys in active fermentation" loading="lazy" />
+      <div class="gallery-caption">Fermentation</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="img/fermentation-bins.jpg" alt="Fermentation bins and oak barrel in the cellar" loading="lazy" />
+      <div class="gallery-caption">Cellar &nbsp;·&nbsp; Primary Fermentation</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="img/carboys.jpg" alt="Three carboys of deep red wine on concrete pad" loading="lazy" />
+      <div class="gallery-caption">Settling &nbsp;·&nbsp; Zinfandel</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="img/hero-cellar.jpg" alt="Cellar shelves with rows of glass carboys" loading="lazy" />
+      <div class="gallery-caption">The Cellar</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="img/wineroom.jpg" alt="The winemaking room with spiral staircase and bottles on table" loading="lazy" />
+      <div class="gallery-caption">The Room</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="img/barrel.jpg" alt="Oak barrel on a rolling stand outdoors" loading="lazy" />
+      <div class="gallery-caption">Oak Barrel &nbsp;·&nbsp; Acquisition Day</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="img/misc4.jpg" alt="Wine barrels and carboys in the cellar" loading="lazy" />
+      <div class="gallery-caption">Cellar &nbsp;·&nbsp; Aging</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="img/misc2.jpg" alt="Rows of bottles lined up on a table before bottling" loading="lazy" />
+      <div class="gallery-caption">Bottling Day &nbsp;·&nbsp; Sparkling</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="img/misc1.jpg" alt="Winemaking room prepared for bottling day" loading="lazy" />
+      <div class="gallery-caption">Bottling Day &nbsp;·&nbsp; Setup</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="img/disgorging.jpg" alt="Disgorging a sparkling wine on the deck overlooking the property" loading="lazy" />
+      <div class="gallery-caption">Disgorgement &nbsp;·&nbsp; Sparkling</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="img/sauvignon-blanc-medal.jpg" alt="2024 Sauvignon Blanc with Sonoma County Harvest Fair Gold Medal" loading="lazy" />
+      <div class="gallery-caption">2024 Sauvignon Blanc &nbsp;·&nbsp; Gold Medal</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     LIGHTBOX
+     ============================================================ -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <img class="footer-logo" src="img/logo.png" alt="5800 North" />
+  <div class="footer-name">5800 North Wines</div>
+  <div class="footer-location">Forestville, California &nbsp;·&nbsp; Highway 116</div>
+  <div class="footer-rule"></div>
+  <div class="footer-copy">Small-lot home winemaking &nbsp;·&nbsp; Not for sale</div>
+</footer>
+
+<script>
+function openLightbox(el) {
+  const img = el.querySelector('img');
+  document.getElementById('lightbox-img').src = img.src;
+  document.getElementById('lightbox-img').alt = img.alt;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+// Prevent click on image from closing lightbox
+document.getElementById('lightbox-img').addEventListener('click', e => e.stopPropagation());
+</script>
+
+</body>
+</html>

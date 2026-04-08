@@ -1,0 +1,721 @@
+/* =====================================================
+   5800 NORTH — Stylesheet
+   Aesthetic: Private estate journal
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+/* ---- Reset & Base ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:       #1a1814;
+  --ink-soft:  #2e2b27;
+  --ivory:     #f5f0ea;
+  --ivory-mid: #ede7de;
+  --parchment: #e8e0d4;
+  --wine:      #6b2035;
+  --wine-dark: #4d1727;
+  --gold:      #b8962e;
+  --gold-pale: #d4b96a;
+  --stone:     #7a736a;
+  --stone-lt:  #b0a89e;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Crimson Pro', Georgia, serif;
+
+  --max-w: 1160px;
+  --gap:   clamp(2rem, 5vw, 5rem);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.1vw, 1.125rem);
+  line-height: 1.75;
+  color: var(--ink-soft);
+  background: var(--ivory);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ---- Nav ---- */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1.5rem, 4vw, 3.5rem);
+  height: 64px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  height: 38px;
+  width: 38px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.nav-logo-text {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ivory);
+  line-height: 1;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--stone-lt);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--ivory); }
+
+/* Vintages dropdown */
+.nav-dropdown { position: relative; }
+
+.nav-dropdown > a::after {
+  content: ' ▾';
+  font-size: 0.6rem;
+  opacity: 0.6;
+  letter-spacing: 0;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink-soft);
+  border: 1px solid rgba(255,255,255,0.08);
+  min-width: 140px;
+  list-style: none;
+  padding: 0.5rem 0;
+}
+
+.nav-dropdown:hover .dropdown-menu { display: block; }
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  color: var(--stone-lt);
+  transition: color 0.15s, background 0.15s;
+}
+
+.dropdown-menu li a:hover {
+  background: rgba(255,255,255,0.05);
+  color: var(--ivory);
+}
+
+/* Mobile hamburger */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--stone-lt);
+  transition: 0.3s;
+}
+
+@media (max-width: 700px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    background: var(--ink);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem clamp(1.5rem, 4vw, 3.5rem) 2rem;
+    gap: 1.25rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-links.open { display: flex; }
+  .dropdown-menu {
+    display: block !important;
+    position: static;
+    transform: none;
+    background: none;
+    border: none;
+    padding: 0.25rem 0 0 1rem;
+  }
+  .nav-dropdown > a::after { content: ''; }
+}
+
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 80px 2rem 4rem;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../img/hero-cellar.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  filter: grayscale(40%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 680px;
+  animation: fadeUp 1.2s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-logo {
+  width: clamp(120px, 18vw, 200px);
+  height: clamp(120px, 18vw, 200px);
+  object-fit: contain;
+  border-radius: 50%;
+  animation: fadeUp 1.2s 0.1s ease both;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--ivory);
+  line-height: 1;
+  animation: fadeUp 1.2s 0.2s ease both;
+}
+
+.hero-sub {
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--stone-lt);
+  animation: fadeUp 1.2s 0.35s ease both;
+}
+
+.hero-rule {
+  width: 48px;
+  height: 1px;
+  background: var(--wine);
+  animation: fadeUp 1.2s 0.45s ease both;
+}
+
+.hero-tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: rgba(245,240,234,0.7);
+  font-weight: 300;
+  animation: fadeUp 1.2s 0.55s ease both;
+}
+
+.hero-nav-hint {
+  margin-top: 3rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stone);
+  animation: fadeUp 1.2s 0.8s ease both;
+}
+.hero-nav-hint a {
+  color: var(--stone-lt);
+  border-bottom: 1px solid var(--wine);
+  padding-bottom: 1px;
+  margin: 0 0.75rem;
+  transition: color 0.2s;
+}
+.hero-nav-hint a:hover { color: var(--ivory); }
+
+/* ---- Award Strip ---- */
+.award-strip {
+  background: var(--ink);
+  padding: var(--gap) clamp(1.5rem, 5vw, 4rem);
+}
+
+.award-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 4rem;
+  align-items: center;
+}
+
+.award-text {}
+
+.award-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.award-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  color: var(--ivory);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.award-text p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--stone-lt);
+  line-height: 1.8;
+  max-width: 48ch;
+}
+
+.award-medal-callout {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--gold);
+  color: var(--gold-pale);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.award-bottle {
+  position: relative;
+}
+
+.award-bottle img {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center top;
+}
+
+@media (max-width: 800px) {
+  .award-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .award-bottle img { max-width: 200px; }
+}
+
+/* ---- Section Wrapper ---- */
+.section {
+  padding: var(--gap) clamp(1.5rem, 5vw, 4rem);
+}
+
+.section-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+/* ---- Photo + Text Rows ---- */
+.photo-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  margin-bottom: 1px;
+}
+
+.photo-row.reverse { direction: rtl; }
+.photo-row.reverse > * { direction: ltr; }
+
+.photo-row-img {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.photo-row-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+
+.photo-row-img:hover img { transform: scale(1.03); }
+
+.photo-row-text {
+  background: var(--ivory-mid);
+  padding: clamp(2.5rem, 5vw, 4.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--wine);
+  margin-bottom: 1rem;
+}
+
+.photo-row-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  color: var(--ink);
+}
+
+.photo-row-text p {
+  font-size: 1rem;
+  color: var(--stone);
+  line-height: 1.85;
+  max-width: 46ch;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 1.75rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--wine);
+  border-bottom: 1px solid var(--wine);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.text-link:hover { color: var(--wine-dark); border-color: var(--wine-dark); }
+
+@media (max-width: 700px) {
+  .photo-row { grid-template-columns: 1fr; }
+  .photo-row.reverse { direction: ltr; }
+  .photo-row-img { aspect-ratio: 16/10; }
+}
+
+/* ---- Divider ---- */
+.rule {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  border: none;
+  border-top: 1px solid var(--parchment);
+}
+
+/* ---- Vintages Page ---- */
+.page-header {
+  padding-top: 64px;
+  background: var(--ink);
+  text-align: center;
+  padding-bottom: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.page-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  color: var(--ivory);
+  letter-spacing: 0.04em;
+  margin-top: 3.5rem;
+}
+
+.page-header p {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--stone-lt);
+  margin-top: 0.75rem;
+}
+
+/* Vintage Jump Nav */
+.vintage-jump {
+  background: var(--ink-soft);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  position: sticky;
+  top: 64px;
+  z-index: 80;
+}
+
+.vintage-jump-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 clamp(1.5rem, 4vw, 3.5rem);
+  gap: 0;
+}
+
+.vintage-jump a {
+  display: block;
+  padding: 1rem 1.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stone-lt);
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.vintage-jump a:hover,
+.vintage-jump a.vy-active {
+  color: var(--ivory);
+  border-bottom-color: var(--wine);
+}
+
+/* Vintage Entries */
+.vintage-entry {
+  padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+  border-bottom: 1px solid var(--parchment);
+  scroll-margin-top: 120px;
+}
+
+.vintage-entry-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.vintage-year-col {
+  position: sticky;
+  top: 140px;
+}
+
+.vintage-year-num {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  font-weight: 300;
+  color: var(--parchment);
+  line-height: 1;
+}
+
+.vintage-year-wines {
+  margin-top: 1rem;
+  list-style: none;
+}
+
+.vintage-year-wines li {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--wine);
+  padding: 0.25rem 0;
+  border-top: 1px solid var(--parchment);
+}
+
+.vintage-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.vintage-content p {
+  font-size: 1.05rem;
+  color: var(--stone);
+  line-height: 1.85;
+  margin-bottom: 1rem;
+  max-width: 62ch;
+}
+
+.vintage-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.vintage-photos img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 700px) {
+  .vintage-entry-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .vintage-year-col { position: static; }
+  .vintage-year-num { font-size: 3.5rem; }
+}
+
+/* ---- Gallery ---- */
+.gallery-grid {
+  columns: 3 280px;
+  column-gap: 6px;
+  padding: 6px;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+  opacity: 0.88;
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(26,24,20,0.8));
+  color: var(--stone-lt);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 1.5rem 0.85rem 0.65rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.gallery-item:hover .gallery-caption { opacity: 1; }
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26,24,20,0.94);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem; right: 2rem;
+  color: var(--stone-lt);
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+}
+.lightbox-close:hover { color: var(--ivory); }
+
+/* ---- Footer ---- */
+footer {
+  background: var(--ink);
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem);
+  text-align: center;
+}
+
+.footer-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin: 0 auto 1.25rem;
+  opacity: 0.7;
+}
+
+.footer-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--stone-lt);
+}
+
+.footer-location {
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.footer-rule {
+  width: 40px;
+  height: 1px;
+  background: var(--wine);
+  margin: 1.5rem auto;
+}
+
+.footer-copy {
+  font-size: 0.7rem;
+  color: var(--stone);
+  letter-spacing: 0.1em;
+}
