@@ -189,3 +189,18 @@ a{color:inherit}
 .entry > .card-media.portrait img{max-height:540px;margin:0 auto}
 .mini.card .card-media{aspect-ratio:4/3}
 .entry .video{max-height:520px;width:auto;max-width:100%;display:block;margin-left:auto;margin-right:auto}
+
+/* Home hero: the cellar in grayscale with the compass rose, from the original site */
+.home-hero{position:relative;min-height:82svh;background:#1a1814;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:80px 2rem 4rem;color:#f5f0ea}
+.home-hero-bg{position:absolute;inset:0;background:url('../img/hero-cellar.jpg') center/cover no-repeat;opacity:.18;filter:grayscale(40%)}
+.home-hero-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:1.4rem;max-width:680px;animation:heroUp 1.2s ease both}
+@keyframes heroUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.home-hero-content{animation:none}}
+.home-hero-logo{width:clamp(120px,18vw,200px);height:clamp(120px,18vw,200px);object-fit:contain}
+.home-hero h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,5rem);font-weight:400;letter-spacing:.06em;line-height:1;margin:0;color:#f5f0ea}
+.home-hero-sub{font-size:clamp(.8rem,1.2vw,.95rem);letter-spacing:.22em;text-transform:uppercase;color:rgba(245,240,234,.72);margin:0}
+.home-hero-rule{width:48px;height:1px;background:var(--accent-2)}
+.home-hero-tagline{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,2vw,1.4rem);color:rgba(245,240,234,.75);margin:0}
+.home-hero-links{margin:2rem 0 0;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase}
+.home-hero-links a{color:rgba(245,240,234,.8);text-decoration:none;border-bottom:1px solid var(--accent-2);padding-bottom:1px;margin:0 .75rem}
+.home-hero-links a:hover{color:#fff}
