@@ -208,3 +208,6 @@ a{color:inherit}
 /* Header mark: the same compass rose as the home page, no tile behind it */
 .brand-mark{border:0;background:transparent;width:44px;height:44px;border-radius:0}
 .brand-mark img{width:100%;height:100%;object-fit:contain;border-radius:0}
+.table.bygrape{table-layout:fixed}
+.table.bygrape th:nth-child(1){width:16%}.table.bygrape th:nth-child(2){width:34%}.table.bygrape th:nth-child(3){width:34%}.table.bygrape th:nth-child(4){width:16%}
+@media (max-width:640px){ .table.bygrape th:nth-child(2),.table.bygrape td:nth-child(2){display:table-cell} .table.bygrape th:nth-child(3),.table.bygrape td:nth-child(3){display:none} .table.bygrape th:nth-child(2){width:50%} }
