@@ -204,3 +204,7 @@ a{color:inherit}
 .home-hero-links{margin:2rem 0 0;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase}
 .home-hero-links a{color:rgba(245,240,234,.8);text-decoration:none;border-bottom:1px solid var(--accent-2);padding-bottom:1px;margin:0 .75rem}
 .home-hero-links a:hover{color:#fff}
+
+/* Header mark: the same compass rose as the home page, no tile behind it */
+.brand-mark{border:0;background:transparent;width:44px;height:44px;border-radius:0}
+.brand-mark img{width:100%;height:100%;object-fit:contain;border-radius:0}
