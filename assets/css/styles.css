@@ -211,3 +211,7 @@ a{color:inherit}
 .table.bygrape{table-layout:fixed}
 .table.bygrape th:nth-child(1){width:16%}.table.bygrape th:nth-child(2){width:34%}.table.bygrape th:nth-child(3){width:34%}.table.bygrape th:nth-child(4){width:16%}
 @media (max-width:640px){ .table.bygrape th:nth-child(2),.table.bygrape td:nth-child(2){display:table-cell} .table.bygrape th:nth-child(3),.table.bygrape td:nth-child(3){display:none} .table.bygrape th:nth-child(2){width:50%} }
+
+/* medal images */
+.medals{display:flex;gap:12px;align-items:center;margin:8px 0 12px}
+.medals img{width:96px;height:96px;object-fit:contain}
